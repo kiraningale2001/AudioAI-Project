@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio AI Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader" id="loader" style="display: none;">
+       
+    </div>
+    <div class="container" id="Main">
+        <h1>Audio AI Web App</h1>
+        <form id="uploadForm">
+            <label class="custom-file-upload">
+                <input type="file" id="fileInput" accept=".wav,audio/*">
+                Choose Audio File
+            </label>
+            <p id="fileName"></p>
+            <button type="button" id="unselectButton" style="display: none;">Unselect File</button>
+            <div id="outputbox" style="display: none;">
+                
+            </div>
+            <div id="belowpart" style="display: none;">
+                <div class="options-wrapper">
+                    <label for="featureSelect">Select Feature:</label>
+                    <select id="featureSelect">
+                        <option value="">Choose...</option>
+                        <option value="transcribe">Audio to Text</option>
+                        <option value="cleanAudio">Clean Audio</option>
+                        <option value="changeVoiceTune">Change Voice Tune</option>
+                    </select>
+                </div>
+                <div id="languageSelectWrapper" style="display: none;">
+                    <label for="languageSelect">Select Language:</label>
+                    <select id="languageSelect">
+                        <option value="1">English</option>
+                        <option value="2">Hindi</option>
+                        <option value="3">Marathi</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </div>
+                <div class="progress-wrapper">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <p id="progressText">0%</p>
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
